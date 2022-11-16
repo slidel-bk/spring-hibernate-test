@@ -1,12 +1,13 @@
 package com.example.autores.configuration;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 
 @org.springframework.context.annotation.Configuration
 public class Configuration {
-
+    @Bean
     public DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.url("jdbc:sqlserver://192.168.10.136;databaseName=SCAD;TrustServerCertificate=True;");
