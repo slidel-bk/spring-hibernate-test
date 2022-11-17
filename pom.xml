@@ -43,10 +43,55 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 			<version>2.7.5</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>2.7.5</version>
+		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<usr>${usr}</usr>
+				<pass>${pass}</pass>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>pro</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>pro</spring.profiles.active>
+				<usr>${usuario}</usr>
+				<pass>${password}</pass>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>preprod</id>
+			<properties>
+				<usr>${usr}</usr>
+				<pass>${pass}</pass>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
