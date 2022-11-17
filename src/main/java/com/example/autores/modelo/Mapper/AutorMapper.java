@@ -13,6 +13,7 @@ public class AutorMapper implements RowMapper<Autores> {
     @Override
     public Autores mapRow(ResultSet rs, int rowNum) throws SQLException {
         Autores autores = new Autores();
+        autores.setId(rs.getInt("au_id"));
         autores.setNombre(rs.getString("au_lname"));
         autores.setApellido(rs.getString("au_fname"));
         autores.setTelefono(rs.getString("phone"));

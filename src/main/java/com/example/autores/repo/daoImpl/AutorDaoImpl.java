@@ -6,7 +6,9 @@ import com.example.autores.repo.dao.AutorDao;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class AutorDaoImpl implements AutorDao {
@@ -35,6 +37,8 @@ public class AutorDaoImpl implements AutorDao {
 
     @Override
     public void eliminar(Integer id) {
-
+        Map<String, Object> delete = new HashMap<>();
+        delete.put("au_id", id);
+        jdbcTemplate.update("DELETE FROM [dbo].[authors] WHERE au_id = ?", delete);
     }
 }

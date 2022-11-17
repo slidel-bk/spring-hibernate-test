@@ -59,8 +59,11 @@
 		<profile>
 			<id>dev</id>
 			<properties>
-				<usr>${usr}</usr>
-				<pass>${pass}</pass>
+				<usr>${usuario}</usr>
+				<pass>${password}</pass>
+
+				<secUser>${secureUser}</secUser>
+				<secPass>${securePass}</secPass>
 			</properties>
 		</profile>
 
@@ -73,14 +76,20 @@
 				<spring.profiles.active>pro</spring.profiles.active>
 				<usr>${usuario}</usr>
 				<pass>${password}</pass>
+
+				<secUser>${secureUser}</secUser>
+				<secPass>${securePass}</secPass>
 			</properties>
 		</profile>
 
 		<profile>
 			<id>preprod</id>
 			<properties>
-				<usr>${usr}</usr>
-				<pass>${pass}</pass>
+				<usr>${usuario}</usr>
+				<pass>${password}</pass>
+
+				<secUser>${secureUser}</secUser>
+				<secPass>${securePass}</secPass>
 			</properties>
 		</profile>
 	</profiles>
