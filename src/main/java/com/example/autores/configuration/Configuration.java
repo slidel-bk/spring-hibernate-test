@@ -18,9 +18,9 @@ public class Configuration {
     @Bean
     public DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.url("jdbc:sqlserver://192.168.10.136;databaseName=SCAD;TrustServerCertificate=True;");
-        dataSourceBuilder.username(usr); //UCEM_IRENE
-        dataSourceBuilder.password(pass); //1234
+        dataSourceBuilder.url("jdbc:sqlserver://localhost;databaseName=autores;TrustServerCertificate=True;");
+        dataSourceBuilder.username(usr); //UCEM_IRENE //prueba2
+        dataSourceBuilder.password(pass); //1234 //prueba2
         return dataSourceBuilder.build();
     }
 }
