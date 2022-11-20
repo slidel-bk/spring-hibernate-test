@@ -1,8 +1,6 @@
-CREATE DATABASE SCAD
-GO
+--create database autores
 
-USE SCAD
-GO
+--use autores
 
 CREATE TABLE authors
 (
